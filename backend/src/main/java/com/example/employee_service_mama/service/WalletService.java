@@ -168,7 +168,7 @@ public class WalletService {
      *  - Does NOT create wallet rows.
      *  - Only updates the active wallet (cycle_end IS NULL).
      */
-    @Scheduled(cron = "0 45 18 * * MON-FRI")
+    @Scheduled(cron = "0 45 18 * * * ")
     @Transactional
     public void updateDailySalary() {
 
@@ -403,3 +403,4 @@ public class WalletService {
 
     private int getCurrentMonth() { return LocalDate.now().getMonthValue(); }
 }
+
